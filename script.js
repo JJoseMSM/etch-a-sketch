@@ -1,12 +1,15 @@
-const container = document.querySelector('.container-screen');
-const squaresBtn = document.querySelector('squaresBtn');
+const screen = document.querySelector('.screen');
 
-for (let i = 0; i < 16; i++) {
-    for(let j = 0; j < 16; j++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        container.appendChild(cell);
-        cell.addEventListener('mouseover',
-    e => e.target.classList.add('my-color-class'));
+let squares = prompt('what grid do you want?');
+function createGrid() {
+    if(squares <= 100) {
+        for (let i = 0; i < squares; i++) {
+            for(let j = 0; j < squares; j++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                screen.appendChild(cell);
+            }
     }
 }
+}
+createGrid()
