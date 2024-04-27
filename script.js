@@ -1,15 +1,18 @@
-const screen = document.querySelector('.screen');
+const grid = document.querySelector('.grid');
 
-let squares = prompt('what grid do you want?');
+
 function createGrid() {
-    if(squares <= 100) {
-        for (let i = 0; i < squares; i++) {
-            for(let j = 0; j < squares; j++) {
-                const cell = document.createElement('div');
-                cell.classList.add('cell');
-                screen.appendChild(cell);
-            }
+
+  let size = prompt('How many grids do you want?')
+   // Use a nested for loop to create the grid cells
+   for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+      grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      grid.appendChild(cell);
     }
+  }
 }
-}
-createGrid()
+   createGrid();
